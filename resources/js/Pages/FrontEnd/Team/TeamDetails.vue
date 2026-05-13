@@ -23,6 +23,7 @@ const props = defineProps({
                                     : '/storage/images/default.jpg'
                             "
                             alt="team image"
+                            loading="lazy"
                         />
                         <div
                             class="border border-slate-200 p-6 mt-10 bg-slate-100"

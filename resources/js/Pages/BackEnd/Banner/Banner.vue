@@ -75,6 +75,8 @@ const submit = () => {
                         v-if="banner?.about_image"
                         :src="'/storage/' + banner.about_image"
                         class="h-20"
+                        alt="about image"
+                        loading="lazy"
                     />
                 </div>
                 <div>
@@ -83,6 +85,8 @@ const submit = () => {
                         v-if="banner?.team_image"
                         :src="'/storage/' + banner.team_image"
                         class="h-20"
+                        alt="team image"
+                        loading="lazy"
                     />
                 </div>
                 <div>
@@ -94,6 +98,8 @@ const submit = () => {
                         v-if="banner?.service_image"
                         :src="'/storage/' + banner.service_image"
                         class="h-20"
+                        alt="service image"
+                        loading="lazy"
                     />
                 </div>
                 <div>
@@ -105,6 +111,8 @@ const submit = () => {
                         v-if="banner?.portfolio_image"
                         :src="'/storage/' + banner.portfolio_image"
                         class="h-20"
+                        alt="portfolio image"
+                        loading="lazy"
                     />
                 </div>
                 <div>
@@ -116,6 +124,8 @@ const submit = () => {
                         v-if="banner?.contact_image"
                         :src="'/storage/' + banner.contact_image"
                         class="h-20"
+                        alt="contact image"
+                        loading="lazy"
                     />
                 </div>
                 <div>
@@ -127,6 +137,8 @@ const submit = () => {
                         v-if="banner?.portfoliodetailes_image"
                         :src="'/storage/' + banner.portfoliodetailes_image"
                         class="h-20"
+                        alt="detailes image"
+                        loading="lazy"
                     />
                 </div>
                 <div>
@@ -138,6 +150,8 @@ const submit = () => {
                         v-if="banner?.project_image"
                         :src="'/storage/' + banner.project_image"
                         class="h-20"
+                        alt="project image"
+                        loading="lazy"
                     />
                 </div>
                 <div>
@@ -149,6 +163,8 @@ const submit = () => {
                         v-if="banner?.booking_image"
                         :src="'/storage/' + banner.booking_image"
                         class="h-20"
+                        alt="booking image"
+                        loading="lazy"
                     />
                 </div>
 

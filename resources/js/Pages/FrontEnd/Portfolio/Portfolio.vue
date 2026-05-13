@@ -149,6 +149,8 @@ const activecategories = computed(() =>
                             <img
                                 class="w-full h-60 object-cover rounded-t"
                                 :src="'/storage/' + portfolio.image"
+                                alt="portfolio image"
+                                loading="lazy"
                             />
 
                             <!-- OVERLAY -->
@@ -209,6 +211,8 @@ const activecategories = computed(() =>
         <img
             :src="'/storage/' + filteredPortfolios[selectedIndex].image"
             class="max-w-[90%] max-h-[90%] rounded"
+            alt="image"
+            loading="lazy"
         />
 
         <!-- NEXT -->

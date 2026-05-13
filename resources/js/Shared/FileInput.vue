@@ -152,7 +152,12 @@ watch(
                 :key="index"
                 class="relative"
             >
-                <img :src="item.url" class="w-20 h-20 object-cover rounded" />
+                <img
+                    :src="item.url"
+                    class="w-20 h-20 object-cover rounded"
+                    alt="image"
+                    loading="lazy"
+                />
 
                 <!-- REMOVE SINGLE -->
                 <button

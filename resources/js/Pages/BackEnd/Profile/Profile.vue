@@ -96,6 +96,8 @@ function submit() {
                         v-if="user.image"
                         :src="`/storage/${user.image}`"
                         class="mt-2 w-20 h-20 rounded-full object-cover"
+                        alt="user image"
+                        loading="lazy"
                     />
                 </div>
 

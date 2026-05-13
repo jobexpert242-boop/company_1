@@ -138,6 +138,7 @@ onBeforeUnmount(() => {
                     :src="`/storage/${$page.props.site?.logo}`"
                     class="h-12"
                     alt="ComitsBD Admin"
+                    loading="lazy"
             /></Link>
         </div>
         <div class="flex gap-10 items-center">
@@ -168,6 +169,8 @@ onBeforeUnmount(() => {
                             v-if="auth.user?.image"
                             :src="`/storage/${auth.user?.image}`"
                             class="w-full rounded-full"
+                            alt="comitsbd image"
+                            loading="lazy"
                         />
                         <i v-else class="fa-regular fa-user text-2xl"></i>
                     </div>

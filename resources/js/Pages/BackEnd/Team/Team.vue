@@ -123,6 +123,8 @@ const resetForm = () => {
                                     v-if="team.image"
                                     :src="'/storage/' + team.image"
                                     class="w-10 h-10 rounded"
+                                    alt="team image"
+                                    loading="lazy"
                                 />
                             </td>
                             <td class="border p-2">{{ team.facebook }}</td>
@@ -196,6 +198,8 @@ const resetForm = () => {
                                 v-if="selectedTeam?.image"
                                 :src="'/storage/' + selectedTeam.image"
                                 class="w-20 h-20 rounded"
+                                alt="image"
+                                loading="lazy"
                             />
                         </div>
                     </div>

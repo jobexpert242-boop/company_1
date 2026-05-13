@@ -131,6 +131,8 @@ const submit = () => {
                                     @click="openImage(i, 'main')"
                                     :src="img"
                                     class="w-full h-[300px] md:h-[450px] object-cover rounded cursor-pointer"
+                                    alt="image"
+                                    loading="lazy"
                                 />
                             </SwiperSlide>
                         </Swiper>
@@ -275,6 +277,8 @@ const submit = () => {
                                 <img
                                     :src="'/storage/' + item.image"
                                     class="w-full h-60 object-cover"
+                                    alt="image"
+                                    loading="lazy"
                                 />
 
                                 <div
@@ -328,6 +332,8 @@ const submit = () => {
         <img
             :src="modalImages[currentIndex]"
             class="max-w-[90%] max-h-[90%] rounded"
+            alt="image"
+            loading="lazy"
         />
 
         <!-- right -->

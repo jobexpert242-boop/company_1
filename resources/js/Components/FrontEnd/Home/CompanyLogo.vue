@@ -40,6 +40,8 @@ const activelogos = computed(() =>
                         <img
                             :src="/storage/ + logo.image"
                             class="h-12 object-contain"
+                            alt="logo"
+                            loading="lazy"
                         />
                     </div>
                 </SwiperSlide>

@@ -19,7 +19,8 @@ const props = defineProps({
                     <img
                         class="w-full object-cover rounded transition-transform duration-300 ease-in-out"
                         :src="'/storage/' + service.image"
-                        alt=""
+                        alt="service image"
+                        loading="lazy"
                     />
                 </div>
             </div>

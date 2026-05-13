@@ -75,6 +75,7 @@ const services = computed(() => page.props.globalServices);
                         width="150"
                         :src="`/storage/${$page.props.site?.logo}`"
                         alt="logo"
+                        loading="lazy"
                     />
                 </Link>
 

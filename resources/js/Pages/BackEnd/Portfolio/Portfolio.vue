@@ -113,6 +113,8 @@ const resetForm = () => {
                                 <img
                                     :src="'/storage/' + item.image"
                                     class="w-12 h-12 object-cover rounded"
+                                    alt="image"
+                                    loading="lazy"
                                 />
                             </td>
 
@@ -283,6 +285,8 @@ const resetForm = () => {
                         v-if="selected?.image"
                         :src="'/storage/' + selected.image"
                         class="w-20 h-20 rounded"
+                        alt="image"
+                        loading="lazy"
                     />
 
                     <!-- Gallery -->
@@ -308,6 +312,8 @@ const resetForm = () => {
                             <img
                                 :src="'/storage/' + img.image"
                                 class="w-16 h-16 rounded"
+                                alt="image"
+                                loading="lazy"
                             />
 
                             <button

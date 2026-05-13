@@ -32,7 +32,7 @@ function submit() {
             type="success"
         />
         <Layout>
-        <Breadcrumb/>
+            <Breadcrumb />
             <div class="p-5 shadow border border-gray-300 rounded">
                 <div class="border-b border-b-gray-300 pb-2">
                     <h2 class="text-xl">
@@ -61,7 +61,8 @@ function submit() {
                                         <img
                                             :src="`/storage/${$page.props.site?.logo}`"
                                             class="w-20 h-20 mt-2 border border-slate-300"
-                                            alt=""
+                                            alt="logo"
+                                            loading="lazy"
                                         />
                                     </div>
 
@@ -76,7 +77,8 @@ function submit() {
                                         <img
                                             :src="`/storage/${$page.props.site?.favaicon}`"
                                             class="w-20 h-20 mt-2 border border-slate-300"
-                                            alt=""
+                                            alt="favaicon"
+                                            loading="lazy"
                                         />
                                     </div>
                                 </div>

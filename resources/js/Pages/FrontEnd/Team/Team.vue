@@ -59,6 +59,7 @@ const activeTeams = computed(() =>
                                         : '/storage/images/default.jpg'
                                 "
                                 alt="team image"
+                                loading="lazy"
                             />
 
                             <div class="p-5 bg-blue-500 relative text-white">

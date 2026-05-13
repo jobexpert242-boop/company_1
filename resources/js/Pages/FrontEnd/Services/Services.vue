@@ -55,7 +55,8 @@ const activeservices = computed(() =>
                                 ><img
                                     class="w-full h-60 object-cover rounded-t transition-transform duration-300 ease-in-out"
                                     :src="'storage/' + service.image"
-                                    alt=""
+                                    alt="service image"
+                                    loading="lazy"
                             /></Link>
                             <div class="p-6 bg-slate-100">
                                 <Link
