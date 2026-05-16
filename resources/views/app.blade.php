@@ -12,9 +12,9 @@
         <title inertia>{{ config('app.name', 'ComitsBD') }}</title>
 
         <meta name="title" content="{{ config('app.name') }}">
-        <meta name="description" content="Your website description here">
-        <meta name="keywords" content="laravel, vue, inertia, web app">
-        <meta name="author" content="Your Company Name">
+        <meta name="description" content="ComitsBD is hardware and software solution company">
+        <meta name="keywords" content="laravel, vue, inertia, web app, comits, comitsbd">
+        <meta name="author" content="ComitsBD">
         <meta name="robots" content="index, follow">
         <meta name="language" content="English">
         <meta name="revisit-after" content="7 days">
@@ -26,7 +26,7 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:title" content="{{ config('app.name') }}">
-        <meta property="og:description" content="Your website description here">
+        <meta property="og:description" content="ComitsBD is hardware and software solution company">
         <meta property="og:image" content="{{ asset('storage/images/seo/preview.webp') }}">
         <meta property="og:site_name" content="{{ config('app.name') }}">
         <meta property="og:locale" content="en_US">
@@ -35,7 +35,7 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:url" content="{{ url()->current() }}">
         <meta name="twitter:title" content="{{ config('app.name') }}">
-        <meta name="twitter:description" content="Your website description here">
+        <meta name="twitter:description" content="ComitsBD is hardware and software solution company">
         <meta name="twitter:image" content="{{ asset('storage/images/seo/preview.webp') }}">
 
         <!-- Favicons -->

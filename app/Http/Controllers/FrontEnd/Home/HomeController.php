@@ -19,16 +19,46 @@ class HomeController extends Controller
 {
     public function home()
     {
-        // return inertia('Home');
         return Inertia::render('Home', [
-            'faqs' => Faq::latest()->get(),
-            'carousels' => HomeCarousel::latest()->get(),
-            'chooseus' => ChooseUs::latest()->get(),
-            'projects' => Project::latest()->get(),
-            'logos' => CompanyLogo::latest()->get(),
-            'categories' => Category::latest()->get(),
-            'portfolios' => Portfolio::latest()->get(),
-            'services' => Service::latest()->take(6)->get(),
+
+            // instant load
+            'carousels' => fn() => HomeCarousel::latest()->get(),
+
+            // deferred load
+            'services' => Inertia::defer(
+                fn() =>
+                Service::latest()->take(6)->get()
+            ),
+
+            'projects' => Inertia::defer(
+                fn() =>
+                Project::latest()->get()
+            ),
+
+            'logos' => Inertia::defer(
+                fn() =>
+                CompanyLogo::latest()->get()
+            ),
+
+            'categories' => Inertia::defer(
+                fn() =>
+                Category::latest()->get()
+            ),
+
+            'portfolios' => Inertia::defer(
+                fn() =>
+                Portfolio::latest()->get()
+            ),
+
+            'chooseus' => Inertia::defer(
+                fn() =>
+                ChooseUs::latest()->get()
+            ),
+
+            'faqs' => Inertia::defer(
+                fn() =>
+                Faq::latest()->get()
+            ),
         ]);
     }
 

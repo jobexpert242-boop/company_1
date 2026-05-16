@@ -1,39 +1,45 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import { Head } from "@inertiajs/vue3";
+import { defineAsyncComponent } from "vue";
+import { Head, Deferred } from "@inertiajs/vue3";
+
 import Layout from "../Components/FrontEnd/Layout/Layout.vue";
-import Carousel from "../Components/FrontEnd/Home/Carousel.vue";
-import Banner from "../Components/FrontEnd/Home/Banner.vue";
-import Services from "../Components/FrontEnd/Home/Services.vue";
-import Portfolio from "../Components/FrontEnd/Home/Portfolio.vue";
-import ChooseUs from "../Components/FrontEnd/Home/ChooseUs.vue";
-import Projects from "../Components/FrontEnd/Home/Projects.vue";
-import CompanyLogo from "../Components/FrontEnd/Home/CompanyLogo.vue";
-import BookingForm from "../Components/FrontEnd/Home/BookingForm.vue";
+
 import FlashMessage from "@/Shared/FlashMessage.vue";
 
-const showButton = ref(false);
+// Lazy Load Components
+const Carousel = defineAsyncComponent(
+    () => import("../Components/FrontEnd/Home/Carousel.vue"),
+);
 
-const handleScroll = () => {
-    showButton.value = window.scrollY > 200;
-};
+const Banner = defineAsyncComponent(
+    () => import("../Components/FrontEnd/Home/Banner.vue"),
+);
 
-const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-    });
-};
+const Services = defineAsyncComponent(
+    () => import("../Components/FrontEnd/Home/Services.vue"),
+);
 
-onMounted(() => {
-    window.addEventListener("scroll", handleScroll);
-});
+const Portfolio = defineAsyncComponent(
+    () => import("../Components/FrontEnd/Home/Portfolio.vue"),
+);
 
-onUnmounted(() => {
-    window.removeEventListener("scroll", handleScroll);
-});
+const ChooseUs = defineAsyncComponent(
+    () => import("../Components/FrontEnd/Home/ChooseUs.vue"),
+);
 
-const props = defineProps({
+const Projects = defineAsyncComponent(
+    () => import("../Components/FrontEnd/Home/Projects.vue"),
+);
+
+const CompanyLogo = defineAsyncComponent(
+    () => import("../Components/FrontEnd/Home/CompanyLogo.vue"),
+);
+
+const BookingForm = defineAsyncComponent(
+    () => import("../Components/FrontEnd/Home/BookingForm.vue"),
+);
+
+defineProps({
     faqs: Array,
     carousels: Array,
     chooseus: Array,
@@ -47,28 +53,71 @@ const props = defineProps({
 
 <template>
     <Head title="Home" />
+
     <FlashMessage
         v-if="$page.props.flash?.status"
         :message="$page.props.flash.status"
         type="success"
     />
+
     <Layout>
+        <!-- Instant -->
         <Carousel :carousels="carousels" />
+
         <Banner />
-        <Services :services="services" />
-        <Portfolio :categories="categories" :portfolios="portfolios" />
-        <ChooseUs :chooseus="props.chooseus" />
-        <Projects :projects="props.projects" />
-        <CompanyLogo :logos="props.logos" />
-        <BookingForm :faqs="faqs" />
-        <button
-            v-show="showButton"
-            @click="scrollToTop"
-            class="bg-blue-500 rounded p-3 text-white fixed bottom-5 right-4 transition-all duration-300 hover:bg-blue-800"
-        >
-            <i class="fa-solid fa-angles-up"></i>
-        </button>
+
+        <!-- Services -->
+        <Deferred data="services">
+            <template #fallback>
+                <div class="text-center py-10">Loading Services...</div>
+            </template>
+
+            <Services :services="services" />
+        </Deferred>
+
+        <!-- Portfolio -->
+        <Deferred data="portfolios">
+            <template #fallback>
+                <div class="text-center py-10">Loading Portfolio...</div>
+            </template>
+
+            <Portfolio :categories="categories" :portfolios="portfolios" />
+        </Deferred>
+
+        <!-- Choose Us -->
+        <Deferred data="chooseus">
+            <template #fallback>
+                <div class="text-center py-10">Loading...</div>
+            </template>
+
+            <ChooseUs :chooseus="chooseus" />
+        </Deferred>
+
+        <!-- Projects -->
+        <Deferred data="projects">
+            <template #fallback>
+                <div class="text-center py-10">Loading Projects...</div>
+            </template>
+
+            <Projects :projects="projects" />
+        </Deferred>
+
+        <!-- Logos -->
+        <Deferred data="logos">
+            <template #fallback>
+                <div class="text-center py-10">Loading Logos...</div>
+            </template>
+
+            <CompanyLogo :logos="logos" />
+        </Deferred>
+
+        <!-- FAQ -->
+        <Deferred data="faqs">
+            <template #fallback>
+                <div class="text-center py-10">Loading FAQ...</div>
+            </template>
+
+            <BookingForm :faqs="faqs" />
+        </Deferred>
     </Layout>
 </template>
-
-<style scoped></style>
